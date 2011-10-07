@@ -1,0 +1,29 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use lib '/path/to/lib';
+
+use IRC::Bot::ESP;
+
+
+my %carriermap = (
+                    sprint => 'messaging.sprintpcs.com',
+                   tmobile => 'tmomail.net',
+                       att => 'txt.att.net',
+                   verizon => 'vtext.com',
+                 );
+
+my %nickmap = (
+                nick1 => { number => '0123456789', carrier => 'sprint' },
+                nick2 => { number => '9876543210', carrier => 'tmobile' },
+              );
+
+IRC::Bot::ESP->new(
+    channels => [ '#cbi-it' ],
+    nick     => 'espbot',
+    server   => 'chat.us.freenode.net',
+    carriermap => \%carriermap,
+    nickmap => \%nickmap,
+)->run;
