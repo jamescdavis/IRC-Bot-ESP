@@ -1,0 +1,5 @@
+
+ * Verify user is registered and in "authorized" list before allowing them to esping
+ * Lights out or working hours time periods where esping isn't/is allowed
+ * Configure authorized users/OP users/phone numbers via IRC commands?
+
